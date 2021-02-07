@@ -1,0 +1,14 @@
+.header {
+    background-color: rgb(85, 85, 85);
+}
+h1 {
+    text-align: center;
+    color: rgb(235, 235, 235);
+}
+
+.aside {
+    background-color: rgb(221, 220, 220);
+}
+.days {
+    width: 20%;
+}
