@@ -9,6 +9,10 @@ h1 {
 .aside {
     background-color: rgb(221, 220, 220);
 }
-.days {
-    width: 20%;
+
+#city {
+    font-size: 30px;
 }
+/* .days {
+    width: 20%;
+} */

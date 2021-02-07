@@ -7,6 +7,11 @@ var humidContainer = document.querySelector("#humid");
 var windContainer = document.querySelector("#wind");
 var uvContainer = document.querySelector("#uv");
 var recent = document.querySelector(".recent");
+var day1 = document.querySelector(".day1");
+var day2 = document.querySelector(".day2");
+var day3 = document.querySelector(".day3");
+var day4 = document.querySelector(".day4");
+var day5 = document.querySelector(".day5");
 
 var storage = JSON.parse(localStorage.getItem("previous search")) || [];
 
@@ -21,7 +26,7 @@ function sumbitCity() {
     if (cityName) {
         getCityWeather(cityName);
         getForcast(cityName);
-        cityContainer.textContent = "City: " + cityInput.value ;
+        cityContainer.textContent = cityInput.value.toUpperCase();
 
     } else {
         alert("Please enter a city");
@@ -66,7 +71,7 @@ var getCityWeather = function (city) {
 
 };
 
-var displayWeather = function (weather, searchTerms) {
+var displayWeather = function (weather) {
     if(weather.length === 0) {
         cityContainer.textContent = "No city found";
         return;
@@ -86,7 +91,7 @@ var sumbitForcast = function(event) {
 };
 
 var getForcast = function (forcast) {
-    var forcastApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + forcast + "&appid=ed9fb803413e55142ef073bf436a5cb4";
+    var forcastApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + forcast + "&units=imperial&appid=ed9fb803413e55142ef073bf436a5cb4";
     
     fetch(forcastApi)
         .then(function (forcastResponse) {
@@ -94,14 +99,25 @@ var getForcast = function (forcast) {
                 console.log(forcastResponse);
                 forcastResponse.json().then(function (forcastData) {
                     console.log(forcastData);
-
-                    
-                    displayWeather(forcastData, forcast)
+                    console.log(forcastData.city.name);
+                    day1.textContent = "Date: " + forcastData.list[3].dt_txt  + "\n" + "Temp: " + forcastData.list[3].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[3].main.humidity +"%";
+                    day2.textContent = "Date: " + forcastData.list[11].dt_txt  + "\n" + "Temp: " + forcastData.list[11].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[11].main.humidity +"%";
+                    day3.textContent = "Date: " + forcastData.list[19].dt_txt  + "\n" + "Temp: " + forcastData.list[19].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[19].main.humidity +"%";
+                    day4.textContent = "Date: " + forcastData.list[27].dt_txt  + "\n" + "Temp: " + forcastData.list[27].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[27].main.humidity +"%";
+                    day5.textContent = "Date: " + forcastData.list[35].dt_txt  + "\n" + "Temp: " + forcastData.list[35].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[35].main.humidity +"%";
+                    // displayForcast(forcastData, forcast)
                 });
             } 
         });
 
 };
+
+// var displayForcast = function (weatherForcast) {
+//  for (var i = 0; i < weatherForcast; i + 8) {
+//      var cityWeatherForcast = data.weatherForcast[i];
+//      dateContainer.textContent = cityWeatherForcast
+//  }
+// }
 
 searchButton.addEventListener("click", sumbitCity);
 
