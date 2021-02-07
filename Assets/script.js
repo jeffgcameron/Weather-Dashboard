@@ -39,11 +39,9 @@ for(var i = 0; i < storage.length; i++) {
 }
 
 function createButton(recentSearches) {
-    var recentButton = document.createElement("button");
+    var recentButton = document.createElement("ol");
     recentButton.innerHTML = recentSearches;
     recent.appendChild(recentButton);
-    recentButton.classList = "list-item flex-row justify-space-between align-center";
-
 }
 
 var getCityWeather = function (city) {
@@ -111,32 +109,4 @@ var getForcast = function (forcast) {
 
 };
 
-// var displayForcast = function (weatherForcast) {
-//  for (var i = 0; i < weatherForcast; i + 8) {
-//      var cityWeatherForcast = data.weatherForcast[i];
-//      dateContainer.textContent = cityWeatherForcast
-//  }
-// }
-
 searchButton.addEventListener("click", sumbitCity);
-
-//when i seach for a city, it prepends the city name to the recent searches bar.
-    //store in local storage and display on the dom
-    //these buttons will be clickable and will properly search for the info of the saved city
-
-//when i search for a city, I will diplsya the api information in the main section fo teh dom
-    //it will display the
-        //1. city name and date
-        //2. current temperature
-        //3. current humidity
-        //4. current wind speed
-        //5. current UV index
-
-//when i seach for a city, i will display the api information for the next five day
-    //for each day, i will display the
-        //1. new date
-        //2. the emoji for sunny, cloudy, rainy, snowy, partially cloudy.
-        //3. the forcasted temp
-        //4. the forcasted humidity
-
-//get weather api
