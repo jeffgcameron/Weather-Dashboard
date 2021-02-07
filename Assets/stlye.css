@@ -1,5 +1,8 @@
+body {
+    background-color: rgb(213, 238, 255);
+}
 .header {
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(143, 143, 143);
 }
 h1 {
     text-align: center;
@@ -7,12 +10,20 @@ h1 {
 }
 
 .aside {
-    background-color: rgb(221, 220, 220);
+    background-color: rgb(233, 233, 233);
+}
+
+.current { 
+    background-color: rgb(255, 255, 205);
+}
+
+.forcast {
+    background-color: rgb(206, 255, 206);
 }
 
 #city {
     font-size: 30px;
 }
-/* .days {
+.days {
     width: 20%;
-} */
+}

@@ -100,12 +100,11 @@ var getForcast = function (forcast) {
                 forcastResponse.json().then(function (forcastData) {
                     console.log(forcastData);
                     console.log(forcastData.city.name);
-                    day1.textContent = "Date: " + forcastData.list[3].dt_txt  + "\n" + "Temp: " + forcastData.list[3].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[3].main.humidity +"%";
-                    day2.textContent = "Date: " + forcastData.list[11].dt_txt  + "\n" + "Temp: " + forcastData.list[11].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[11].main.humidity +"%";
-                    day3.textContent = "Date: " + forcastData.list[19].dt_txt  + "\n" + "Temp: " + forcastData.list[19].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[19].main.humidity +"%";
-                    day4.textContent = "Date: " + forcastData.list[27].dt_txt  + "\n" + "Temp: " + forcastData.list[27].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[27].main.humidity +"%";
-                    day5.textContent = "Date: " + forcastData.list[35].dt_txt  + "\n" + "Temp: " + forcastData.list[35].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[35].main.humidity +"%";
-                    // displayForcast(forcastData, forcast)
+                    day1.textContent = "Date: " + forcastData.list[2].dt_txt  + "\n" + "Temp: " + forcastData.list[2].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[2].main.humidity +"%";
+                    day2.textContent = "Date: " + forcastData.list[10].dt_txt  + "\n" + "Temp: " + forcastData.list[10].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[10].main.humidity +"%";
+                    day3.textContent = "Date: " + forcastData.list[18].dt_txt  + "\n" + "Temp: " + forcastData.list[18].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[18].main.humidity +"%";
+                    day4.textContent = "Date: " + forcastData.list[26].dt_txt  + "\n" + "Temp: " + forcastData.list[26].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[26].main.humidity +"%";
+                    day5.textContent = "Date: " + forcastData.list[34].dt_txt  + "\n" + "Temp: " + forcastData.list[34].main.temp  + "°F"  + "\n" + "Humidity: " + forcastData.list[34].main.humidity +"%";
                 });
             } 
         });
